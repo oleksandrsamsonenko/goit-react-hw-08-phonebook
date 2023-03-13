@@ -43,6 +43,7 @@ export const ContactForm = () => {
       <label className={css.label}>
         Name
         <input
+          className={css.input}
           onChange={handleInputChange}
           value={state.name}
           type="text"
@@ -56,6 +57,7 @@ export const ContactForm = () => {
       <label className={css.label}>
         Number
         <input
+          className={css.input}
           onChange={handleInputChange}
           value={state.number}
           type="tel"

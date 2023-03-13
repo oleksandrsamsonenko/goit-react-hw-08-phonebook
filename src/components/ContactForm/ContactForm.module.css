@@ -15,8 +15,16 @@
   padding: 5px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Montserrat';
 }
 
-.btn:hover {
-  background-color: lightgoldenrodyellow;
+.btn:hover,
+.btn:focus {
+  background-color: #0c9fee;
+  color: whitesmoke;
+}
+
+.input {
+  font-family: 'Montserrat';
+  padding: 3px;
 }
