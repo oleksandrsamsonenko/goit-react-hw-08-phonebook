@@ -1,4 +1,5 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+
 import * as api from '../../api/connectionsAPI';
 
 export const register = createAsyncThunk(

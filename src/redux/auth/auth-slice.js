@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { register, login, logout, current } from './auth-operations';
+import { showRegisterAlert } from 'pages/RegisterPage/RegisterPage';
+import { showLoginAlert } from 'pages/LoginPage/LoginPage';
 
 const initialState = {
   user: {},
@@ -27,6 +29,7 @@ const authSlice = createSlice({
       .addCase(register.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
+        showRegisterAlert();
       })
       .addCase(login.pending, state => {
         state.loading = true;
@@ -39,8 +42,10 @@ const authSlice = createSlice({
         state.isLogin = true;
       })
       .addCase(login.rejected, (state, { payload }) => {
+        console.log(payload);
         state.loading = false;
         state.error = payload;
+        showLoginAlert();
       })
       .addCase(logout.pending, state => {
         state.loading = true;

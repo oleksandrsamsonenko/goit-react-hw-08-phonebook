@@ -4,6 +4,22 @@ import { login } from 'redux/auth/auth-operations';
 
 import style from './LoginPage.module.css';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+export const showLoginAlert = () => {
+  toast.error('Please enter correct e-mail and password ', {
+    position: 'top-center',
+    autoClose: 2500,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: false,
+    draggable: true,
+    progress: undefined,
+    theme: 'colored',
+  });
+};
+
 const LoginPage = () => {
   const [state, setState] = useState({});
   const dispatch = useDispatch();
@@ -50,6 +66,7 @@ const LoginPage = () => {
 
         <button className={style.button}>Log in</button>
       </form>
+      <ToastContainer />
     </div>
   );
 };
